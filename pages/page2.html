@@ -1,134 +1,242 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <!--
 	Twenty by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>My WebGIS</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="../assets/libraries/bootstrap-5.0.2-dist/css/bootstrap.css">
-		<link rel="stylesheet" href="../assets/css/main.css" />
-		<link rel="stylesheet" href="../assets/css/custom-styles.css" />
-	</head>
-	<body class="left-sidebar is-preload">
-		<div id="page-wrapper">
+  <head>
+    <title>Val Belviso - Results</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link
+      rel="stylesheet"
+      href="../assets/libraries/bootstrap-5.0.2-dist/css/bootstrap.css"
+    />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="stylesheet" href="../assets/css/custom-styles.css" />
+  </head>
+  <body class="left-sidebar is-preload">
+    <div id="page-wrapper">
+      <!-- Header -->
+      <header id="header">
+        <h1 id="logo"><a href="../index.html">Val Belviso - Results</a></h1>
+        <nav id="nav">
+          <ul>
+            <li class="current"><a href="../index.html">Home</a></li>
+            <li class="current"><a href="page1.html">Methodology</a></li>
+            <li class="current"><a href="page2.html">Results</a></li>
+            <li class="current"><a href="webgis.html">WebGIS</a></li>
+          </ul>
+        </nav>
+      </header>
 
-			<!-- Header -->
-				<header id="header">
-					<h1 id="logo"><a href="../index.html">My WebGIS - Page 2</a></h1>
-					<nav id="nav"> 
-						<ul>
-							<li class="current"><a href="../index.html">HOME</a></li>
-							<li class="current"><a href="page2.html">Page 2</a></li>
-							<li class="current"><a href="webgis.html">WebGIS</a></li>
-						</ul>
-					</nav>
-				</header>
+      <!-- Main -->
+      <article id="main">
+        <header class="special container">
+          <span class="icon solid fa-globe"></span>
+          <h2>Results</h2>
+          <p>
+            In this section will be presented the main outcomes and results of
+            the analysis, in particular regarding the Susceptibility Maps and
+            the Exposure Assessments.
+          </p>
+        </header>
 
-			<!-- Main -->
-				<article id="main">
+        <!-- Susceptibility maps results -->
+        <div class="wrapper style3 container special">
+          <header class="major">
+            <h3 id="chapt1">1. Susceptibility maps results</h3>
+          </header>
+          <p class="justify">
+            Once the first susceptibility map is created, we need to validate
+            the result. In order to do so, a valitadion script through R is
+            performed. To run the script, we need to reclassify the
+            susceptibility map layer in 2 simple classes, 0 and 1. All the
+            pixels falling in the 0-0.5 range will be a 0, which means no
+            hazard, while all those falling in the 0.5-1 range will be a 1, so
+            hazard. The process compares this new layer with the testing points
+            layer that was created earlier and returns an accuracy level.
+          </p>
+          <img src="../images/test.png" alt="Points" style="max-width: 100%" />
+          <img
+            src="../images/accur_1.png"
+            alt="Points"
+            style="max-width: 50%"
+          />
+          <p class="justify">
+            The overall accuracy is 0.73, a pretty low value, that can be
+            increased. In order to do so, we can try to increase the number of
+            the training points that are used to create the susceptibility map,
+            so that the level of detail of the information will be higher.
+          </p>
+          <header class="major">
+            <h4>Points increased at 2,000</h4>
+          </header>
+          <p class="justify">
+            The first attempt is to increase the number of points from 1,000 to
+            2,000, keeping the 30:70 ratio, so that the training points will be
+            1,400 and the testing points 600. We run the script again and
+            validate the result.
+          </p>
+          <img
+            src="../images/test_2.png"
+            alt="Points"
+            style="max-width: 100%"
+          />
+          <img
+            src="../images/accur_2.png"
+            alt="Points"
+            style="max-width: 50%"
+          />
+          <p class="justify">
+            The overall accuracy increased by 0.1 points till 0.83, which seems
+            a fair good result, considering it is quite above 0.8 and had a huge
+            jump in relation to the 1,000 points version. Some possible
+            explanation for this big change will be discussed later on in this
+            section.
+          </p>
+          <header class="major">
+            <h3 id="chapt2">2. Exposure assessment results</h3>
+          </header>
+          <p class="justify">
+            The last step is to assess how many elements of the territory are
+            exposed to the landslide susceptibility levels we just obtained. A
+            first element to evaluate is how much of the population is exposed.
+            The raster data of 2020 population related to the 4 classes returns
+            these results.
+          </p>
+          <img
+            src="../images/exp_pop.png"
+            alt="Points"
+            style="max-width: 100%"
+          />
+          <div>
+            <br />
+          </div>
+          <p class="justify">
+            Since both the 1,000 and 2,000 point layers results are presented,
+            we can visualize how the values change in the two versions. In
+            particular, it seems that in the second version the amount of people
+            living in the "Low" class increases. This is related to how the
+            2,000 points version represents the densely urbanized area of
+            Aprica.
+          </p>
+          <header class="major">
+            <h4>Building assessment</h4>
+          </header>
+          <p class="justify">
+            A second element that has been assessed is the presence of buildings
+            in the 4 classes. The workflow is slightly different since the
+            buildings layer of Geoportale Regione Lombardia is a vector dataset.
+            For this reason, as a rule, it was considered the highest level of
+            lanslide susceptibility on which each geometry was located and then
+            computed the statistics on the buildings layer itself.
+          </p>
+          <img
+            src="../images/exp_build.png"
+            alt="Points"
+            style="max-width: 100%"
+          />
+          <div>
+            <br />
+          </div>
+          <p class="justify">
+            In this case, the differences between the 1,000 and 2,000 points
+            versions are not so evident, while it's very clear how the results
+            differ from the population one. While the population falling in the
+            highest classes was almost not present, we do have some buildings
+            that are located in areas with High or also Very High landslide
+            susceptibility levels. The intuitive reason for this is that there
+            are some buildings in the south area of the valley near the lake,
+            but they are not inhabited.
+          </p>
+          <header class="major">
+            <h3 id="chapt3">3. Final considerations</h3>
+          </header>
+          <p class="justify">
+            In this final section some final considerations will be discussed,
+            regardings the limits of the model, the error faced and the the
+            approximations applied.
+          </p>
+          <ul>
+            <li>
+              <p class="justify">
+                There are some limits and hard approximations that are always
+                present in this analysis. Some of them were already stated, for
+                example the limit of considering only Hazard (1) and no
+                Hazard(0) area both in the training and testing points and so in
+                the creation and validation of the susceptibility maps.
+              </p>
+            </li>
+            <li>
+              <p class="justify">
+                Some problems were faced during the elaborations, in particular
+                all those issues related to layers projection, extention and
+                resolution. Since the model requires that the three components
+                must be the same for each of the environmental factors, this led
+                to some geometrical approximations and light distorsion,
+                expecially because the layers had non homogeneous sources.
+              </p>
+            </li>
+            <li>
+              <p class="justify">
+                More detailed issues regarded the creation of the Susceptibility
+                maps, which even in the final version present some blank areas.
+                The first "blank area" issue was caused by the slope and the
+                aspect layers. These layers had some "nodata" areas, always very
+                flat ground areas, such as a part of the Aprica valley
+                urbanization. In that case the error was corrected before
+                running the model, appling 0 values to those NULL areas. The
+                blank areas that are still visible are casued by the "12" DUSAF
+                code, the "Productive areas", that the model seems to ignore.
+              </p>
+            </li>
+            <li>
+              <p class="justify">
+                Some final considerations about the analyzed area need to be
+                stated. As we can evaluate even from a direct view of the
+                satellite, the urbanization is all concentrated in the north
+                valley of Aprica and this led to big variations in the
+                assessment results, as already stated. In addition to that, some
+                "hard" elements are present in the area, for example the ski
+                slopes of Aprica or the small lakes, which, depending on how the
+                susceptibility level is computed, may cause big variations also
+                in the validation exercise that was carried off after the maps
+                creation.
+              </p>
+            </li>
+          </ul>
+          <a
+            href="../pages/webgis.html"
+            class="button primary"
+            style="margin-top: 50px"
+            >Explore the WebGIS!
+          </a>
+        </div>
+      </article>
 
-					<header class="special container">
-						<span class="icon solid fa-globe"></span>
-						<h2>In this second page <strong>you can put additional information!</strong></h2>
-						<p>Feel free to modify the layout and add information as you want. <br>Bootstrap is already included in this template!</p>
-					</header>
+      <!-- Footer -->
+      <footer id="footer">
+        <ul class="copyright">
+          <li>&copy; Val Belviso</li>
+          <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+        </ul>
+      </footer>
+    </div>
 
-					<!-- One -->
-						<div class="wrapper style4 container">
-
-							<!-- Content -->
-								<div class="content">
-									<div>
-										<a href="#" class="image featured"><img src="../images/pic04.jpg" alt="" /></a>
-										<header>
-											<h3>Dolore Amet Consequat</h3>
-										</header>
-										<p>Aliquam massa urna, imperdiet sit amet mi non, bibendum euismod est. Curabitur mi justo, tincidunt vel eros ullamcorper, porta cursus justo. Cras vel neque eros. Vestibulum diam quam, mollis at consectetur non, malesuada quis augue. Morbi tincidunt pretium interdum. Morbi mattis elementum orci, nec dictum massa. Morbi eu faucibus massa. Aliquam massa urna, imperdiet sit amet mi non, bibendum euismod est. Curabitur mi justo, tincidunt vel eros ullamcorper, porta cursus justo. Cras vel neque eros. Vestibulum diam.</p>
-										<p>Vestibulum diam quam, mollis at consectetur non, malesuada quis augue. Morbi tincidunt pretium interdum. Morbi mattis elementum orci, nec dictum porta cursus justo. Quisque ultricies lorem in ligula condimentum, et egestas turpis sagittis. Cras ac nunc urna. Nullam eget lobortis purus. Phasellus vitae tortor non est placerat tristique. Sed id sem et massa ornare pellentesque. Maecenas pharetra porta accumsan. </p>
-										<p>In vestibulum massa quis arcu lobortis tempus. Nam pretium arcu in odio vulputate luctus. Suspendisse euismod lorem eget lacinia fringilla. Sed sed felis justo. Nunc sodales elit in laoreet aliquam. Nam gravida, nisl sit amet iaculis porttitor, risus nisi rutrum metus, non hendrerit ipsum arcu tristique est.</p>
-									</div>
-								</div>
-
-						</div>
-
-					<!-- Two -->
-						<div class="wrapper style1 container special">
-							<div class="row">
-								<div class="col-4 col-12-narrower">
-
-									<div>
-										<header>
-											<h3>This is Something</h3>
-										</header>
-										<p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
-										<footer>
-											<ul class="buttons">
-												<li><a href="#" class="button small">Learn More</a></li>
-											</ul>
-										</footer>
-									</div>
-
-								</div>
-								<div class="col-4 col-12-narrower">
-
-									<div>
-										<header>
-											<h3>Also Something</h3>
-										</header>
-										<p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
-										<footer>
-											<ul class="buttons">
-												<li><a href="#" class="button small">Learn More</a></li>
-											</ul>
-										</footer>
-									</div>
-
-								</div>
-								<div class="col-4 col-12-narrower">
-
-									<div>
-										<header>
-											<h3>Probably Something</h3>
-										</header>
-										<p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
-										<footer>
-											<ul class="buttons">
-												<li><a href="#" class="button small">Learn More</a></li>
-											</ul>
-										</footer>
-									</div>
-
-								</div>
-							</div>
-						</div>
-
-				</article>
-
-			<!-- Footer -->
-				<footer id="footer">
-
-					<ul class="copyright">
-						<li>&copy; My WebGIS</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-
-				</footer>
-
-		</div>
-
-		<!-- Scripts -->
-			<script src="../assets/js/jquery.min.js"></script>
-			<script src="../assets/js/jquery.dropotron.min.js"></script>
-			<script src="../assets/js/jquery.scrolly.min.js"></script>
-			<script src="../assets/js/jquery.scrollgress.min.js"></script>
-			<script src="../assets/js/jquery.scrollex.min.js"></script>
-			<script src="../assets/js/browser.min.js"></script>
-			<script src="../assets/js/breakpoints.min.js"></script>
-			<script src="../assets/js/util.js"></script>
-			<script src="../assets/js/main.js"></script>
-
-	</body>
+    <!-- Scripts -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/jquery.dropotron.min.js"></script>
+    <script src="../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../assets/js/jquery.scrollgress.min.js"></script>
+    <script src="../assets/js/jquery.scrollex.min.js"></script>
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script src="../assets/js/main.js"></script>
+  </body>
 </html>

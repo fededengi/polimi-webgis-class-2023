@@ -17,8 +17,8 @@
 
 .custom-banner {
     /*Change the background image here*/
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/3/3d/Flag-map_of_the_world_%282017%29.png') !important;
-    background-size: cover !important;
+    background-image: url('https://www.menatti.com/app/uploads/2019/12/val-belviso.jpg') !important;
+    background-size: 25em;
 
     /* Original background, for reference
     background-attachment: scroll, scroll, scroll, fixed;
@@ -90,4 +90,9 @@
     background: white;
     border: 2px solid cadetblue;
     padding: 10px;
+}
+
+.where{
+    display: flex;
+    
 }

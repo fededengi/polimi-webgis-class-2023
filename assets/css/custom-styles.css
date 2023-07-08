@@ -17,7 +17,7 @@
 
 .custom-banner {
     /*Change the background image here*/
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/3/3d/Flag-map_of_the_world_%282017%29.png') !important;
+    background-image: url('https://www.menatti.com/app/uploads/2019/12/val-belviso.jpg') !important;
     background-size: cover !important;
 
     /* Original background, for reference
@@ -30,7 +30,8 @@
     */
 
     width: 100%;
-    height: 100%;
+    height: 950px;
+    margin-bottom: 10 px;
 }
 
 /*Popup Styles*/
@@ -84,10 +85,53 @@
 
 /*Add your new styles after this line*/
 .custom-control {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 12pt;
+    font-weight: bold;
+    color: white;
     bottom: 30px;
     position: absolute;
     right: 15px;
-    background: white;
-    border: 2px solid cadetblue;
-    padding: 10px;
+    background: #0f5858;
+    border: 2px solid white;
+    padding: 5px;
+}
+
+.basic-data-grid{
+    display: grid;
+    grid: 300 px;
+    margin-top: 50 px;
+    margin-right: 50 px;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-content: top;
+    column-gap: 10px;
+    margin-bottom: 20px;   
+}
+
+.basic-data-element{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: right;
+    align-content: top;
+}
+
+.basic-data-text{
+    display: block;
+    text-align: justify;
+}
+
+.basic-data-img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.justify{
+    text-align: justify;
+}
+
+ul.buttons-page2 {
+    cursor: default;
+    list-style: none;
+    padding-left: 0;
 }

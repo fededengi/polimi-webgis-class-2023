@@ -46,7 +46,7 @@ let map = new ol.Map({
     target: document.getElementById('map'),
     layers: [basemapLayers, overlayLayers],
     view: new ol.View({
-        center: ol.proj.fromLonLat([-74, 4.6]),
+        center: ol.proj.fromLonLat([10.1354, 46.1061]),
         zoom: 5
     }),
 });
@@ -156,6 +156,7 @@ var popup = new ol.Overlay({
     element: container
 });
 map.addOverlay(popup);
+
 //This is the event listener for the map. It fires when a single click is made on the map.
 map.on('singleclick', function (event) {
     //This iterates over all the features that are located on the pixel of the click (can be many)
