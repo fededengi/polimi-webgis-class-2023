@@ -23,7 +23,7 @@
     <div id="page-wrapper">
       <!-- Header -->
       <header id="header">
-        <h1 id="logo"><a href="../index.html">Val Belviso - Results</a></h1>
+        <h1 id="logo"><a href="#">Val Belviso - Results</a></h1>
         <nav id="nav">
           <ul>
             <li class="current"><a href="../index.html">Home</a></li>
@@ -37,9 +37,9 @@
       <!-- Main -->
       <article id="main">
         <header class="special container">
-          <span class="icon solid fa-globe"></span>
+          <span class="icon solid fa-trophy"></span>
           <h2>Results</h2>
-          <p>
+          <p class="headbold">
             In this section will be presented the main outcomes and results of
             the analysis, in particular regarding the Susceptibility Maps and
             the Exposure Assessments.
@@ -67,12 +67,17 @@
             alt="Points"
             style="max-width: 50%"
           />
+          <figcaption>
+            Validation of the 1,000 points version and accuracy measures
+          </figcaption>
+          <br />
           <p class="justify">
             The overall accuracy is 0.73, a pretty low value, that can be
             increased. In order to do so, we can try to increase the number of
             the training points that are used to create the susceptibility map,
             so that the level of detail of the information will be higher.
           </p>
+          <br />
           <header class="major">
             <h4>Points increased at 2,000</h4>
           </header>
@@ -92,6 +97,10 @@
             alt="Points"
             style="max-width: 50%"
           />
+          <figcaption>
+            Validation of the 2,000 points version and accuracy measures
+          </figcaption>
+          <br />
           <p class="justify">
             The overall accuracy increased by 0.1 points till 0.83, which seems
             a fair good result, considering it is quite above 0.8 and had a huge
@@ -114,6 +123,8 @@
             alt="Points"
             style="max-width: 100%"
           />
+          <figcaption>Population exposure assessment</figcaption>
+          <br />
           <div>
             <br />
           </div>
@@ -121,38 +132,41 @@
             Since both the 1,000 and 2,000 point layers results are presented,
             we can visualize how the values change in the two versions. In
             particular, it seems that in the second version the amount of people
-            living in the "Low" class increases. This is related to how the
-            2,000 points version represents the densely urbanized area of
+            living in the "Low" class increases. This is mainly related to how
+            the 2,000 points version represents the densely urbanized area of
             Aprica.
           </p>
           <header class="major">
-            <h4>Building assessment</h4>
+            <br />
+            <h4>Buildings assessment</h4>
           </header>
           <p class="justify">
             A second element that has been assessed is the presence of buildings
             in the 4 classes. The workflow is slightly different since the
-            buildings layer of Geoportale Regione Lombardia is a vector dataset.
-            For this reason, as a rule, it was considered the highest level of
-            lanslide susceptibility on which each geometry was located and then
-            computed the statistics on the buildings layer itself.
+            buildings layer of <i>Geoportale Regione Lombardia</i> is a vector
+            dataset. For this reason, as a rule, it was considered the highest
+            level of lanslide susceptibility on which each geometry was located
+            and then were computed the statistics on the buildings layer itself.
           </p>
           <img
             src="../images/exp_build.png"
             alt="Points"
             style="max-width: 100%"
           />
+          <figcaption>Buildings exposure assessment</figcaption>
+          <br />
           <div>
             <br />
           </div>
           <p class="justify">
             In this case, the differences between the 1,000 and 2,000 points
-            versions are not so evident, while it's very clear how the results
-            differ from the population one. While the population falling in the
-            highest classes was almost not present, we do have some buildings
-            that are located in areas with High or also Very High landslide
-            susceptibility levels. The intuitive reason for this is that there
-            are some buildings in the south area of the valley near the lake,
-            but they are not inhabited.
+            versions are not so evident, while it's very clear how both results
+            differ from the population ones. While the population falling in the
+            highest classes was almost not present, in thi case we do have some
+            buildings that are located in areas with "High" or also "Very High"
+            landslide susceptibility levels. The intuitive reason for this is
+            that there are some buildings in the south area of the valley near
+            the lake, but they are not inhabited.
           </p>
           <header class="major">
             <h3 id="chapt3">3. Final considerations</h3>
@@ -188,7 +202,7 @@
                 maps, which even in the final version present some blank areas.
                 The first "blank area" issue was caused by the slope and the
                 aspect layers. These layers had some "nodata" areas, always very
-                flat ground areas, such as a part of the Aprica valley
+                flat ground areas, such as a part of the <i>Aprica</i> valley
                 urbanization. In that case the error was corrected before
                 running the model, appling 0 values to those NULL areas. The
                 blank areas that are still visible are casued by the "12" DUSAF
@@ -200,12 +214,13 @@
                 Some final considerations about the analyzed area need to be
                 stated. As we can evaluate even from a direct view of the
                 satellite, the urbanization is all concentrated in the north
-                valley of Aprica and this led to big variations in the
+                valley of <i>Aprica</i> and this led to big variations in the
                 assessment results, as already stated. In addition to that, some
                 "hard" elements are present in the area, for example the ski
-                slopes of Aprica or the small lakes, which, depending on how the
-                susceptibility level is computed, may cause big variations also
-                in the validation exercise that was carried off after the maps
+                slopes of <i>Aprica</i> or the small lakes as well as the
+                <i>Belviso</i> one, which, depending on how the susceptibility
+                level is computed, may cause big variations also in the
+                validation exercise that was carried off after the maps
                 creation.
               </p>
             </li>

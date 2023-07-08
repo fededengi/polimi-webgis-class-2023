@@ -23,7 +23,7 @@
     <div id="page-wrapper">
       <!-- Header -->
       <header id="header">
-        <h1 id="logo"><a href="../index.html">Val Belviso - Methodology</a></h1>
+        <h1 id="logo"><a href="#">Val Belviso - Methodology</a></h1>
         <nav id="nav">
           <ul>
             <li class="current"><a href="../index.html">Home</a></li>
@@ -37,11 +37,11 @@
       <!-- Main -->
       <article id="main">
         <header class="special container">
-          <span class="icon solid fa-globe"></span>
+          <span class="icon solid fa-wrench"></span>
           <h2>Methodology</h2>
-          <p>
-            In this section will be presented the worflow and methodology
-            applied in order to obtain the Landslide Susceptibility Maps and
+          <p class="headbold">
+            In this section will be presented the workflow and methodology
+            applied in order to obtain the Landslide Susceptibility Maps and the
             Exposure Assessment.
           </p>
         </header>
@@ -55,8 +55,8 @@
           <div class="row">
             <div class="col-6 col-12-narrower">
               <div>
-                <a href="#chapt1" style="width: 10 px">
-                  <img src="../images/step1.jpg" />
+                <a href="#chapt1">
+                  <img src="../images/step1.jpg" class="symb-method" />
                 </a>
                 <header>
                   <h4>1.Data preprocessing for susceptibility mapping</h4>
@@ -71,8 +71,8 @@
             </div>
             <div class="col-6 col-12-narrower">
               <div>
-                <a href="#chapt2" style="width: 10 px">
-                  <img src="../images/step2.jpg" />
+                <a href="#chapt2">
+                  <img src="../images/step2.jpg" class="symb-method" />
                 </a>
                 <header>
                   <h4>2.Susceptibility map generation</h4>
@@ -88,23 +88,23 @@
           <div class="row">
             <div class="col-6 col-12-narrower">
               <div>
-                <a href="#chapt3" style="width: 10 px">
-                  <img src="../images/step3.jpg" />
+                <a href="#chapt3">
+                  <img src="../images/step3.jpg" class="symb-method" />
                 </a>
                 <header>
                   <h4>3.Data preprocessing for exposure assessment</h4>
                 </header>
                 <p>
                   Another preprocessing set of operations regarder the data
-                  related to population exposure, through wich evaluate the
+                  related to population exposure, through which evaluate the
                   density of inhabitants in the Landslide Susceptibility areas.
                 </p>
               </div>
             </div>
             <div class="col-6 col-12-narrower">
               <div>
-                <a href="#chapt4" style="width: 10 px">
-                  <img src="../images/step4.jpg" />
+                <a href="#chapt4">
+                  <img src="../images/step4.jpg" class="symb-method" />
                 </a>
                 <header>
                   <h4>4.Exposure assessment</h4>
@@ -138,11 +138,13 @@
             <!-- DTM -->
             <div class="basic-data-element">
               <div class="basic-data-text">
-                <h5>DTM</h5>
+                <div>
+                  <b>DTM</b>
+                </div>
                 <div>
                   The DTM represents the model of the terrain in a xyz format.
-                  It's derived from Geoportale Lombardia and it's helpful to
-                  process other informations.
+                  It's derived from <i>Geoportale Lombardia</i> and it's helpful
+                  to process other informations.
                 </div>
               </div>
               <div>
@@ -156,12 +158,14 @@
             <!-- NDVI -->
             <div class="basic-data-element">
               <div class="basic-data-text">
-                <h5>NDVI</h5>
                 <div>
-                  The Normalized Difference Vegetation Index is a raster data
-                  that quantifies the health and density of vegetation through
-                  color bands. Data is derived from ESA Copernicus Sentinel-2
-                  missions of 2020.
+                  <b>NDVI</b>
+                </div>
+                <div>
+                  The <i>Normalized Difference Vegetation Index</i> is a raster
+                  dataset that quantifies the health and density of vegetation
+                  through color bands. Data is derived from ESA Copernicus
+                  Sentinel-2 missions of 2020.
                 </div>
               </div>
               <div>
@@ -178,12 +182,12 @@
             <!-- DUSAF -->
             <div class="basic-data-element">
               <div class="basic-data-text">
-                <h5>DUSAF</h5>
+                <b>DUSAF</b>
                 <div>
-                  DUSAF stands for Destinazione d'Uso del Suolo Agricolo e
-                  Forestale and it's the regional database pf Lombardy about use
-                  of soil. The categories are collected in a tree scheme till 5
-                  digits codes.
+                  DUSAF stands for
+                  <i>Destinazione d'Uso del Suolo Agricolo e Forestale</i> and
+                  it's the regional database of Lombardy about use of soil. The
+                  categories are collected in a tree scheme till 5 digits codes.
                 </div>
               </div>
               <div>
@@ -197,7 +201,7 @@
             <!-- ROADS -->
             <div class="basic-data-element">
               <div class="basic-data-text">
-                <h5>Roads</h5>
+                <b>Roads</b>
                 <div>
                   The data represents the buffers of distance from the main
                   roads in the area.
@@ -217,7 +221,7 @@
             <!-- RIVERS -->
             <div class="basic-data-element">
               <div class="basic-data-text">
-                <h5>Rivers</h5>
+                <b>Rivers</b>
                 <div>
                   The data represents the buffers of distance from the main
                   water courses in the area.
@@ -234,7 +238,7 @@
             <!-- FAULTS -->
             <div class="basic-data-element">
               <div class="basic-data-text">
-                <h5>Faults</h5>
+                <b>Faults</b>
                 <div>
                   The data represents the buffers of distance from the main
                   geological faults in the area.
@@ -249,7 +253,7 @@
               </div>
             </div>
           </div>
-
+          <br />
           <header>
             <h4>Computed data</h4>
           </header>
@@ -262,7 +266,7 @@
             <!-- SLOPE -->
             <div class="basic-data-element">
               <div class="basic-data-text">
-                <h5>Slope</h5>
+                <b>Slope</b>
                 <div>
                   The slope represents the inclination angle of the terrain and
                   it's directly related to landslide occurance.
@@ -279,9 +283,9 @@
             <!-- ASPECT -->
             <div class="basic-data-element">
               <div class="basic-data-text">
-                <h5>Aspect</h5>
+                <b>Aspect</b>
                 <div>
-                  The aspect represents the orientation od the slope of the
+                  The aspect represents the orientation of the slope of the
                   terrain. It is strictly linked to sun exposure intensity and
                   also to vegetation presence and strenght.
                 </div>
@@ -300,9 +304,9 @@
             <!-- PLAN -->
             <div class="basic-data-element">
               <div class="basic-data-text">
-                <h5>Plan curvature</h5>
+                <b>Plan curvature</b>
                 <div>
-                  The plan curvature rapresents the slope profile in the plan
+                  The plan curvature rapresents the slope curvature in the plan
                   side. Concave and convex terrain can affect landslide
                   creation.
                 </div>
@@ -318,9 +322,9 @@
             <!-- PROFILE -->
             <div class="basic-data-element">
               <div class="basic-data-text">
-                <h5>Profile curvature</h5>
+                <b>Profile curvature</b>
                 <div>
-                  The profile curvature rapresents the slope profile in the
+                  The profile curvature rapresents the slope curvature in the
                   profile side. Concave and convex terrain can affect landslide
                   creation.
                 </div>
@@ -334,34 +338,45 @@
               </div>
             </div>
           </div>
-
+          <br />
           <header>
             <h4>Setting the training and testing points</h4>
           </header>
           <p class="justify">
             In order to make the algorithm run properly, the layers already
             presented are not enough. We need to create a set of points through
-            which we define an hazard level with a defined value. To do so, two
+            which we define an hazard level with a precise value. To do so, two
             new datasets are used.
           </p>
-          <p class="justify">
-            The first one is directly downloaded from ISPRA: it is the IFFI
-            landslide inventory and represents the landslides already occured in
-            the past, between rapid flowing and rotational/translational
-            sliding.
-          </p>
-          <p class="justify">
-            The second one is derived from the slope layer already processed. We
-            will assume that all the soil unde 20° and over 70° of slope is very
-            unlikely to generate landslides. The first is it not enough
-            inclined, while the latter usually hosts compositions of too hard
-            rocks.
-          </p>
+          <ul>
+            <li>
+              <p class="justify">
+                The first one is directly downloaded from ISPRA: it is the "IFFI
+                landslide inventory" and represents the landslides already
+                occured in the past, between rapid flowing and
+                rotational/translational sliding.
+              </p>
+            </li>
+            <li>
+              <p class="justify">
+                The second one is derived from the <i>slope</i> layer already
+                processed. We will assume that all the soil unde 20° and over
+                70° of slope is very unlikely to generate landslides. The first
+                is it not enough inclined, while the latter usually hosts
+                compositions of too hard rocks.
+              </p>
+            </li>
+          </ul>
           <img
             src="../images/data/hazard.png"
             alt="Hazard"
             style="max-width: 100%"
           />
+          <figcaption>
+            Lanslide inventory dataset (on the left) and the "No Landslide
+            zones"
+          </figcaption>
+          <br />
           <p class="justify">
             At this point we define by convention the "no landslide zones" as
             areas without hazard (value=0) and the areas previously affected by
@@ -392,6 +407,11 @@
             alt="Points"
             style="max-width: 100%"
           />
+          <figcaption>
+            Geometry from wich points are created (on the left) and the points
+            layers
+          </figcaption>
+          <br />
           <p class="justify">
             The final operation is to join the information of the Basic and
             Computed Data raster layers to the point layers. A sampling
@@ -416,6 +436,8 @@
             previous section.
           </p>
           <img src="../images/model.png" alt="Table" style="max-width: 100%" />
+          <figcaption>Model workflow scheme</figcaption>
+          <br />
           <p class="justify">
             The first outcome of the script is a raster layer with continue
             values between 0 and 1, representing respectively the lowest and
@@ -429,6 +451,8 @@
             alt="Susceptibility maps"
             style="max-width: 100%"
           />
+          <figcaption>Susceptibility Maps</figcaption>
+          <br />
         </div>
 
         <!-- Data preprocessing for exposure assessment -->
@@ -461,6 +485,8 @@
             alt="Population preprocessing"
             style="max-width: 100%"
           />
+          <figcaption>Preprocessed layers for exposure assessment</figcaption>
+          <br />
         </div>
 
         <!-- Exposure assessment -->
@@ -487,6 +513,8 @@
             alt="Aprica"
             style="max-width: 100%"
           />
+          <figcaption>The town of Aprica and its ski resort</figcaption>
+          <br />
           <a
             href="../pages/page2.html"
             class="button primary"

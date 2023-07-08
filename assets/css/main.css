@@ -1,6 +1,6 @@
 @import url("fontawesome-all.min.css");
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,900");
-@import url("https://fonts.googleapis.com/css?family=Roboto:100,300,700");
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700");
 
 
 /*
@@ -20,7 +20,7 @@ tfoot, thead, tr, th, td, article, aside,
 canvas, details, embed, figure, figcaption,
 footer, header, hgroup, menu, nav, output, ruby,
 div, summary, time, mark, audio, video {
-	margin: auto;
+	margin: 0;
 	padding: 0;
 	border: 0;
 	font-size: 100%;
@@ -132,7 +132,7 @@ input, select, textarea {
 
 	h1, h2, h3, h4, h5, h6 {
 		color: inherit;
-		font-weight: 300;
+		font-weight: 400;
 		line-height: 1.75em;
 		margin-bottom: 1em;
 		margin-top: 1em;
@@ -1881,7 +1881,7 @@ input, select, textarea {
 
 			.image.featured img {
 				display: block;
-				width: 100%;
+				align-content: center;
 			}
 
 /* Icon */

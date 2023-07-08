@@ -99,31 +99,27 @@
 
 .basic-data-grid{
     display: grid;
-    grid: 300 px;
-    margin-top: 50 px;
-    margin-right: 50 px;
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
     grid-template-columns: 1fr 1fr;
-    justify-content: center;
-    align-content: top;
     column-gap: 10px;
-    margin-bottom: 20px;   
 }
 
 .basic-data-element{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1.5fr;
     justify-content: right;
-    align-content: top;
+    align-items: start;
 }
 
 .basic-data-text{
     display: block;
-    text-align: justify;
+    text-align: left;
 }
 
 .basic-data-img{
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
 }
 
 .justify{
@@ -134,4 +130,35 @@ ul.buttons-page2 {
     cursor: default;
     list-style: none;
     padding-left: 0;
+}
+
+figcaption{
+    display: block;
+    text-align: center;
+    font-style: italic;
+}
+
+i{
+    font-style: italic;
+}
+
+.headbold {
+    font-size: 18pt;
+    font-weight: 400;
+}
+
+.index-img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    margin-bottom: 10px;
+  }
+
+.symb-method{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    margin-bottom: 10px;
 }
