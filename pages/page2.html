@@ -40,9 +40,9 @@
           <span class="icon solid fa-trophy"></span>
           <h2>Results</h2>
           <p class="headbold">
-            In this section will be presented the main outcomes and results of
-            the analysis, in particular regarding the Susceptibility Maps and
-            the Exposure Assessments.
+            This section will present the main outcomes and results of the
+            analysis, in particular regarding the Susceptibility Maps and the
+            Exposure Assessments.
           </p>
         </header>
 
@@ -52,14 +52,15 @@
             <h3 id="chapt1">1. Susceptibility maps results</h3>
           </header>
           <p class="justify">
-            Once the first susceptibility map is created, we need to validate
-            the result. In order to do so, a valitadion script through R is
-            performed. To run the script, we need to reclassify the
-            susceptibility map layer in 2 simple classes, 0 and 1. All the
-            pixels falling in the 0-0.5 range will be a 0, which means no
-            hazard, while all those falling in the 0.5-1 range will be a 1, so
-            hazard. The process compares this new layer with the testing points
-            layer that was created earlier and returns an accuracy level.
+            Once the first susceptibility map is created, we need to
+            <b>validate</b> the result. In order to do so, a validation script
+            through R is performed. To run the script, we need to
+            <b>reclassify</b> the susceptibility map layer into 2 simple
+            classes, 0 and 1. All the pixels falling in the 0 - 0.5 range will
+            be a 0, which means no hazard, while all those falling in the 0.5 -
+            1 range will be a 1, so hazard. The process compares this new layer
+            with the <b>testing</b> points layer that was created earlier and
+            returns an accuracy level.
           </p>
           <img src="../images/test.png" alt="Points" style="max-width: 100%" />
           <img
@@ -72,19 +73,21 @@
           </figcaption>
           <br />
           <p class="justify">
-            The overall accuracy is 0.73, a pretty low value, that can be
-            increased. In order to do so, we can try to increase the number of
-            the training points that are used to create the susceptibility map,
-            so that the level of detail of the information will be higher.
+            The overall accuracy is <b>0.73</b>, a pretty low value that can be
+            increased. In order to do so, we can try to <b>increase</b> the
+            number of <b>training</b> points that are used to create the
+            susceptibility map, so that the level of detail of the information
+            will be higher.
           </p>
           <br />
           <header class="major">
             <h4>Points increased at 2,000</h4>
           </header>
           <p class="justify">
-            The first attempt is to increase the number of points from 1,000 to
-            2,000, keeping the 30:70 ratio, so that the training points will be
-            1,400 and the testing points 600. We run the script again and
+            The first attempt is to increase the overall number of points from
+            1,000 to 2,000, keeping the 30:70 ratio, so that the
+            <b>training</b> points will be <b>1,400</b> and the
+            <b>testing</b> points <b>600</b>. We run the script again and then
             validate the result.
           </p>
           <img
@@ -102,21 +105,23 @@
           </figcaption>
           <br />
           <p class="justify">
-            The overall accuracy increased by 0.1 points till 0.83, which seems
-            a fair good result, considering it is quite above 0.8 and had a huge
-            jump in relation to the 1,000 points version. Some possible
-            explanation for this big change will be discussed later on in this
-            section.
+            The overall accuracy is increased by 0.1 points till <b>0.83</b>,
+            which seems a way better result, considering it's enough above 0.8
+            and had a huge jump in relation to the 1,000 points version. Some
+            possible explanations for this big change will be discussed later on
+            in this section.
           </p>
+        </div>
+        <div class="wrapper style3 container special">
           <header class="major">
             <h3 id="chapt2">2. Exposure assessment results</h3>
           </header>
           <p class="justify">
-            The last step is to assess how many elements of the territory are
-            exposed to the landslide susceptibility levels we just obtained. A
-            first element to evaluate is how much of the population is exposed.
-            The raster data of 2020 population related to the 4 classes returns
-            these results.
+            The last step is to <b>assess</b> how many elements of the territory
+            are <b>exposed</b> to the landslide susceptibility levels we just
+            obtained. A first element to evaluate is how much of the
+            <b>population</b> is exposed. The raster data of 2020 population
+            aggregate according to the four classes returns these results.
           </p>
           <img
             src="../images/exp_pop.png"
@@ -141,12 +146,13 @@
             <h4>Buildings assessment</h4>
           </header>
           <p class="justify">
-            A second element that has been assessed is the presence of buildings
-            in the 4 classes. The workflow is slightly different since the
-            buildings layer of <i>Geoportale Regione Lombardia</i> is a vector
-            dataset. For this reason, as a rule, it was considered the highest
-            level of lanslide susceptibility on which each geometry was located
-            and then were computed the statistics on the buildings layer itself.
+            A second element that has been assessed is the presence of
+            <b>buildings</b> in the four classes. The workflow is slightly
+            different since the buildings layer of
+            <i>Geoportale Regione Lombardia</i> is a vector dataset. For this
+            reason, as a rule, it was considered the <b>highest</b> level of
+            lanslide susceptibility on which each geometry was located and then
+            the statistics on the buildings layer were computed.
           </p>
           <img
             src="../images/exp_build.png"
@@ -162,56 +168,63 @@
             In this case, the differences between the 1,000 and 2,000 points
             versions are not so evident, while it's very clear how both results
             differ from the population ones. While the population falling in the
-            highest classes was almost not present, in thi case we do have some
+            highest classes was almost not present, in this case we do have some
             buildings that are located in areas with "High" or also "Very High"
             landslide susceptibility levels. The intuitive reason for this is
             that there are some buildings in the south area of the valley near
             the lake, but they are not inhabited.
           </p>
+        </div>
+        <div class="wrapper style3 container special">
           <header class="major">
             <h3 id="chapt3">3. Final considerations</h3>
           </header>
           <p class="justify">
-            In this last section some final considerations will be discussed,
-            regardings the limits of the model, the error faced and the the
-            approximations applied.
+            In this last section some <b>final considerations</b> will be
+            discussed, regardings the <b>limits</b> of the model, the
+            <b>errors</b> faced and the <b>approximations</b> applied.
           </p>
           <ul>
             <li>
               <p class="justify">
-                There are some limits and hard approximations that are always
+                There are some limits and hard approximations that are
+                <b>always</b>
                 present in this analysis. Some of them were already stated, for
                 example the limit of considering only Hazard (1) and no
-                Hazard(0) area both in the training and testing points and so in
-                the creation and validation of the susceptibility maps.
+                Hazard(0) area both in the <b>training and testing point</b>s
+                and so in the <b>creation and validation</b> of the
+                susceptibility maps.
               </p>
             </li>
             <li>
               <p class="justify">
                 Some problems were faced during the elaborations, in particular
-                all those issues related to layers projection, extention and
-                resolution. Since the model requires that the three components
-                must be the same for each of the environmental factors, this led
-                to some geometrical approximations and light distorsion,
-                expecially because the layers had non homogeneous sources.
+                all those issues related to
+                <b>layers projection, extention and resolution</b>. Since the
+                model requires that the three components must be the same for
+                each of the environmental factors, this led to some geometrical
+                approximations and light distorsion, expecially because the
+                layers had non homogeneous sources.
               </p>
             </li>
             <li>
               <p class="justify">
                 More detailed issues regarded the creation of the Susceptibility
-                maps, which even in the final version present some blank areas.
-                The first "blank area" issue was caused by the slope and the
-                aspect layers. These layers had some "nodata" areas, always very
-                flat ground areas, such as a part of the <i>Aprica</i> valley
-                urbanization. In that case the error was corrected before
-                running the model, appling 0 values to those NULL areas. The
-                blank areas that are still visible are casued by the "12" DUSAF
-                code, the "Productive areas", that the model seems to ignore.
+                maps, which even in the final version present some
+                <b>blank areas</b>. The first "blank area" issue was caused by
+                the slope and the aspect layers. These layers had some "nodata"
+                areas, always very flat ground areas, such as a part of the
+                <i>Aprica</i> valley urbanization. In that case the error was
+                corrected before running the model, appling 0 values to those
+                NULL areas. The blank areas that are still visible are casued by
+                the "12" <b>DUSAF</b> code, the "Productive areas", that the
+                model seems to ignore.
               </p>
             </li>
             <li>
               <p class="justify">
-                Some final considerations about the analyzed area need to be
+                Some final considerations
+                <b>about the analyzed portion of territory</b> need to be
                 stated. As we can evaluate even from a direct view of the
                 satellite, the urbanization is all concentrated in the north
                 valley of <i>Aprica</i> and this led to big variations in the
@@ -219,9 +232,9 @@
                 "hard" elements are present in the area, for example the ski
                 slopes of <i>Aprica</i> or the small lakes as well as the
                 <i>Belviso</i> one, which, depending on how the susceptibility
-                level is computed, may cause big variations also in the
-                validation exercise that was carried off after the maps
-                creation.
+                level is computed, <b>may cause big variations</b>may cause big
+                variations also in the validation exercise that was carried out
+                after the maps creation.
               </p>
             </li>
           </ul>

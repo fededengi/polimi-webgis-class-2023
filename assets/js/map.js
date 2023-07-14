@@ -17,6 +17,7 @@ var bingRoads = new ol.layer.Tile({
     imagerySet: "Road",
   }),
 });
+
 var bingAerial = new ol.layer.Tile({
   title: "Bing Maps—Aerial",
   type: "base",
@@ -25,14 +26,6 @@ var bingAerial = new ol.layer.Tile({
     key: BING_MAPS_KEY,
     imagerySet: "Aerial",
   }),
-});
-var colombiaDepartments = new ol.layer.Image({
-  title: "Colombia adm1",
-  source: new ol.source.ImageWMS({
-    url: "https://www.gis-geoserver.polimi.it/geoserver/wms",
-    params: { LAYERS: "gis:COL_adm1" },
-  }),
-  opacity: 0.5,
 });
 
 var stamenWatercolor = new ol.layer.Tile({
@@ -43,6 +36,7 @@ var stamenWatercolor = new ol.layer.Tile({
     layer: "watercolor",
   }),
 });
+
 var stamenToner = new ol.layer.Tile({
   title: "Stamen Toner",
   type: "base",
@@ -178,7 +172,7 @@ var nlz = new ol.layer.Image({
     url: "https://www.gis-geoserver.polimi.it/geoserver/wms",
     params: { LAYERS: "gisgeoserver_09:NLZ" },
   }),
-  visible: true,
+  visible: false,
 });
 
 var ls = new ol.layer.Image({
@@ -290,6 +284,7 @@ var pop = new ol.layer.Image({
     params: { LAYERS: "gisgeoserver_09:pop" },
   }),
   visible: false,
+  opacity: 0.7,
 });
 
 var build = new ol.layer.Image({
@@ -384,7 +379,7 @@ let map = new ol.Map({
 });
 
 // Add the map controls:
-map.addControl(new ol.control.ScaleLine()); //Controls can be added using the addControl() map function
+map.addControl(new ol.control.ScaleLine());
 map.addControl(new ol.control.FullScreen());
 map.addControl(new ol.control.OverviewMap());
 map.addControl(
@@ -410,6 +405,7 @@ var popup = new ol.Overlay({
 });
 map.addOverlay(popup);
 
+//Prepare the popup function
 function getMapLayers() {
   return map.getAllLayers();
 }
@@ -418,7 +414,7 @@ console.log(layerList);
 
 //This is the event listener for the map. It fires when a single click is made on the map.
 map.on("singleclick", (event) => {
-  content.innerHTML = "";
+  content.innerHTML = ""; //Resets the popup after the click
 
   //This iterates over all the features that are located on the pixel of the click (can be many)
   var feature = map.forEachFeatureAtPixel(
@@ -427,11 +423,12 @@ map.on("singleclick", (event) => {
       return feature;
     }
   );
-
+  //The cycle look for visible layers
   var layerList = getMapLayers();
   for (let i in layerList) {
     var currentLayer = layerList[i];
     console.log(layerList[i].get("title"), layerList[i].getVisible());
+    //We have to convert the standard OL CRS to the layers' one
     if (currentLayer.getVisible()) {
       try {
         var viewResolution = map.getView().getResolution();
@@ -448,7 +445,7 @@ map.on("singleclick", (event) => {
             INFO_FORMAT: "text/html",
           });
         console.log(url);
-
+        //If the URL is returned the popup is opened
         if (url) {
           var pixel = event.pixel;
           var coord = map.getCoordinateFromPixel(pixel);
@@ -466,9 +463,8 @@ map.on("singleclick", (event) => {
       }
     }
   }
-
-  //Only if the nlz layer is visible, do the GetFeatureInfo request
 });
+
 //This closes the pop-up when the X button is clicked
 closer.onclick = function () {
   popup.setPosition(undefined);
