@@ -306,7 +306,6 @@ var ispra = new ol.layer.Image({
 });
 
 //Add the layers to layer groups
-
 let basemapLayers = new ol.layer.Group({
   title: "Base Maps",
   layers: [osm, bingRoads, bingAerial, stamenToner, stamenWatercolor],
@@ -351,7 +350,7 @@ let expLayers = new ol.layer.Group({
   layers: [supt_map_1k_pop, supt_map_2k_pop, pop, ispra, build],
 });
 
-//register the new projection
+//register the new projection we will use for the pop-up click
 //32632
 //console.log(projectionDefinitions);
 proj4.defs(
